@@ -1,2 +1,2 @@
 # eternelle
-Pagina web de éternelle
+Pagina web de eternelle

@@ -1,0 +1,884 @@
+/* CSS COMPLETO CON CORRECCIONES PARA SAFARI/iOS */
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../fonts/geomanist-light-webfont.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+    font-family: 'Geomanist', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+header img {
+    height: auto;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+/* Sección de encabezado */
+.bloque-beneficios {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.separador {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+}
+
+.titulo-beneficios {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo-beneficios {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.lista-beneficios li {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.lista-beneficios li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #999;
+}
+
+/* Grid de productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Card */
+.container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.133);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    position: relative; 
+    z-index: 1; 
+}
+
+/* SOLUCIÓN iOS: Añadir :focus y :active al .container */
+.container:hover,
+.container:focus,
+.container:active {
+    transform: translateY(-5px);
+}
+
+.container .head,
+.container .price,
+.container .cart {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.overlay.show .head,
+.overlay.show .price,
+.overlay.show .cart {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(230, 229, 229, 0.9);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all; /* ← Reactiva clics dentro del overlay visible */
+}
+
+
+
+/* Contenido interno */
+.items {
+    padding: 0 30px;
+    letter-spacing: 1px;
+}
+
+.items.head {
+    padding-top: 30px; /* Espacio superior */
+}
+
+.head {
+    font-size: 30px;
+    line-height: 12px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+    position: relative;
+}
+
+.head hr {
+    width: 0;
+    border: none;
+    border-top: 2px solid #fff;
+    margin-top: 8px;
+    transition: all 0.5s;
+}
+
+.marca {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+    line-height: 29px;
+}
+
+.descripcion {
+    color: #000000;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 15px 0;
+}
+
+.price {
+    font-size: 22px;
+    line-height: 50px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.cart {
+    font-size: 12px;
+    opacity: 0;
+    letter-spacing: 1px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    padding-left: 25px;
+}
+
+.new {
+    color: #000000;
+    margin: 0;
+}
+
+/* SOLUCIÓN iOS: Añadir :focus y :active a las animaciones internas */
+.container:hover .head,
+.container:hover .price,
+.container:hover .cart,
+.container:focus .head,
+.container:focus .price,
+.container:focus .cart,
+.container:active .head,
+.container:active .price,
+.container:active .cart {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.container:hover .head hr,
+.container:focus .head hr,
+.container:active .head hr {
+    width: 100%;
+    transition-delay: 0.4s;
+}
+
+.container:hover .price,
+.container:focus .price,
+.container:active .price {
+    transition-delay: 0.3s;
+}
+
+.container:hover .cart,
+.container:focus .cart,
+.container:active .cart {
+    transition-delay: 0.6s;
+}
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+}
+
+/* Responsive: móvil */
+@media (max-width: 700px) {
+    header img {
+        max-width: 250px;
+    }
+
+    .section-header {
+        padding: 0 20px;
+        margin: 35px 20px 20px;
+    }
+
+    .section-header h2 {
+        font-weight: bold;
+    }
+
+    .descripcion-seccion {
+        line-height: 2;
+    }
+
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container {
+        height: 350px;
+        background-size: 100%;
+    }
+
+    .footer {
+        font-size: 13px;
+        padding: 15px;
+    }
+}
+
+/* Responsive: tablet */
+@media (min-width: 700px) and (max-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        max-width: 350px;
+        height: 380px;
+        background-size: 100%;
+    }
+
+    header img {
+        max-width: 300px;
+    }
+}
+
+/* Responsive: escritorio medio */
+@media (max-width: 1400px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr); /* Cambiado de auto a 1fr */
+        max-width: 1000px;
+        gap:10px;
+    }
+
+    .container {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        max-width: 335px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0,0,0,0.133);
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1070px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 750px;
+    }
+}
+
+/* Ajustes adicionales */
+@media (max-width: 900px) { /* Corregido a 900px con unidad */
+    .head hr {
+        margin-top: 20px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .head .descripcion:last-of-type {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .products {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .container {
+        max-width: 350px;
+        height: 380px;
+        background-size: contain;
+    }
+}
+
+/*nuevo*/
+
+/* contenedor relativo para que el panel se posicione respecto al product-item */
+.product-item {
+    position: relative;
+    display: inline-block; 
+    width: 100%;
+    max-width: 320px;
+}
+
+/* el card conserva su tamaño (tu .container sigue igual) */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* panel overlay: cubre el card (ajusta width/height según prefieras) */
+.panel-lateral {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    padding: 18px;
+    z-index: 50;
+}
+
+/* mostrar panel cuando el checkbox esté marcado (input debe estar antes del panel) */
+.toggle-detalle:checked ~ .panel-lateral {
+    display: block;
+}
+
+/* backdrop opcional oscuro detrás del panel (si quieres énfasis) */
+.panel-lateral::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* botón cerrar en la esquina superior derecha */
+.cerrar-panel {
+    position: absolute; /* Añadido position: absolute */
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 60;
+    font-weight: 700;
+}
+
+/* estilos internos */
+.lista-ingredientes { list-style:none; padding-left:0; margin-top:10px; }
+.lista-ingredientes li { margin-bottom:8px; line-height:1.5; color:#444; }
+
+/* Responsive: en pantallas pequeñas el panel puede ocupar más altura */
+@media (max-width: 768px) {
+    .panel-lateral { 
+        max-height: 100%;
+    }
+}
+
+.ver-producto {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pedir-ahora {
+    background-color: #2f7740;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.items.cart {
+    /* CRÍTICO: Añadir margin-top: auto para empujar al fondo */
+    margin-top: auto; 
+    padding-bottom: 30px; /* Espacio entre los botones y el borde */
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* SOLUCIÓN iOS: Añadir :focus y :active a los botones */
+.ver-producto:hover,
+.ver-producto:focus,
+.ver-producto:active {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.pedir-ahora:hover,
+.pedir-ahora:focus,
+.pedir-ahora:active {
+    background-color: #45c234;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* --- ESTILOS PARA EL MENÚ DE NAVEGACIÓN ORGANIZADO Y SIMPLE --- */
+
+.menu-principal {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links > li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    padding: 8px 12px;
+    transition: color 0.3s, border-bottom 0.3s;
+    display: inline-block;
+    text-transform: lowercase;
+}
+
+/* Estado activo/hover */
+.nav-link:hover,
+.nav-link.current {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Dropdown (Submenús) */
+.dropdown {
+    position: relative;
+}
+
+/* Contenedor del submenú */
+.submenu {
+    list-style: none;
+    padding: 5px 0;
+    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    text-align: left;
+}
+
+/* Título de categoría dentro del submenú */
+.submenu-category-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    padding: 10px 15px 5px 15px;
+    margin-top: 5px;
+    border-top: 1px solid #eee;
+}
+.submenu-category-title:first-child {
+    border-top: none;
+    margin-top: 0;
+}
+
+/* Mostrar submenú al pasar el ratón */
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu,
+.dropdown.active .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos de los ítems del submenú */
+.submenu li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 11px 15px;
+    white-space: nowrap;
+    text-transform: lowercase;
+}
+
+.submenu li a:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* --- RESPONSIVE: COMPORTAMIENTO EN MÓVIL (768px o menos) --- */
+@media (max-width: 768px) {
+    /* Menú en móvil: columna */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0 10px;
+    }
+
+    .nav-links > li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .nav-links > li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    /* Submenú en móvil: se despliega in-line */
+    .submenu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background-color: #fcfcfc;
+        min-width: 100%;
+        text-align: left;
+        opacity: 1;
+        visibility: visible;
+        display: none; 
+        padding-left: 0;
+    }
+
+    .dropdown.active .submenu {
+        display: block;}
+
+    .submenu-category-title {
+        background-color: #f0f0f0;
+        padding: 8px 15px;
+    }
+
+    .submenu li a {
+        padding-left: 30px;
+    }
+}
+
+/* CONTACTO.CSS: Estilos específicos para la página de contacto */
+
+/* Asegurar que la página ocupe toda la altura */
+.contacto-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 150px;
+    background-color: #ffffff; /* Fondo suave */
+}
+
+.contacto-container {
+    width: 100%;
+    max-width: 450px; /* Ajustado para que se vea bien en el centro */
+    text-align: center;
+}
+
+.contacto-header {
+    margin-bottom: 30px;
+}
+
+.contacto-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.contacto-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 80px;
+}
+
+.contacto-subtitle {
+    font-size: 16px;
+    color: #666;
+
+}
+
+.contacto-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.redes-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.contacto-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 30px 0 20px 0;
+}
+
+/* --- ESTILOS DE BOTONES --- */
+
+.contacto-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+/* Estilos específicos para WhatsApp */
+.contacto-btn.whatsapp {
+    background-color: #25D366;
+}
+.contacto-btn.whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* Contenedor de redes sociales */
+.redes-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.red-btn {
+    flex-grow: 1; /* Permite que ambos botones crezcan por igual */
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para Instagram */
+.red-btn.instagram-btn {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.red-btn.instagram-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* Estilos específicos para TikTok */
+.red-btn.tiktok-btn {
+    background-color: #000000;
+}
+.red-btn.tiktok-btn:hover {
+    background-color: #69C9D0;
+    transform: translateY(-2px);
+}
+
+/* Iconos dentro de los botones */
+.contacto-btn i, .red-btn i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.contacto-note {
+    font-size: 14px;
+    color: #999;
+    margin-top: 25px;
+}
+
+
+/* --- Responsive Móvil (Ajuste final) --- */
+@media (max-width: 768px) {
+    .redes-container {
+        flex-direction: column; /* Apilamos los botones de redes en pantallas muy pequeñas */
+    }
+    .contacto-card {
+        padding: 20px;
+    }
+    .contacto-title {
+        font-size: 38px;
+    }
+
+    .contacto-container{
+        width: auto;
+    max-width: 950px; /* Ajustado para que se vea bien en el centro */
+    text-align: center;
+    }
+
+    .contacto-main
+    {
+        padding:20px;
+    };
+    
+}
+
+.barra-envio {
+  width: 100%;
+  background-color: #000; /* color de fondo (puedes cambiarlo) */
+  color: #fff; /* color del texto */
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative; /* para que quede siempre arriba */
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.texto-envio {
+  display: inline-block;
+  padding-left: 100%;
+  animation: moverTexto 20s linear infinite;
+}
+
+@keyframes moverTexto {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

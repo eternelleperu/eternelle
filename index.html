@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/estilos.css"> 
+  <title>éternelle</title>
+
+  <style>
+
+
+    
+
+
+    /* --- ESTILOS DE LA PÁGINA PRINCIPAL (HOME) --- */
+
+/* Contenedores de Sección */
+.products-section {
+  
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bloque-encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 🏆 HERO SECTION (Banner) */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 44px;
+    font-weight: 800;
+    color: #000;
+    margin: 10px 0 20px 0;
+}
+
+
+.hero-subtitle {
+    font-size: 38px;
+    color: #444;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    margin:0
+}
+
+.hero-cta {
+    display: inline-block;
+    background-color: #2f7740;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+.hero-cta:hover {
+    background-color: #45c234;
+}
+
+/* 📐 GRID PARA HOME */
+.grid-home {
+    /* Mantiene el grid de 4 columnas en escritorio, como en b12.html */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; /* Un poco más de espacio */
+}
+
+/* --- Responsive para Home (Asegurar 2 columnas en Tablet) --- */
+@media (max-width: 1024px) {
+    .grid-home {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+@media (max-width: 700px) {
+    .grid-home {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+    }
+    .hero-title {
+        font-size: 34px;
+    }
+    .section-title {
+        font-size: 28px;
+        padding: 0 15px 15px 15px;
+    }
+    .section-description {
+        padding: 0 15px 15px 15px;
+          }
+}
+
+  
+
+    .footer {
+        flex-shrink: 0;
+        background-color: #fff;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #555;
+        border-top: 1px solid #ddd;
+        }
+
+  
+        @media (max-width: 700px) {
+          .footer {
+            font-size: 13px;
+            padding: 15px;
+          }
+        }
+
+        @media (min-width: 700px) and (max-width: 1024px) {
+              header img {
+            max-width: 300px;
+          }
+        }
+
+        @media (max-width: 700px) {
+      
+            .vitamina {   
+                
+                font-size: 22px;
+                }
+            header img {
+                max-width: 250px;
+            }
+        
+        }
+
+    
+  </style>
+</head>
+
+<div class="barra-envio">
+        <div class="texto-envio">
+            ✈️ Envío gratuito a partir de S/350 a todo Lima y Provincias. &nbsp;&nbsp;&nbsp;
+            
+        </div>
+    </div>
+
+ <header>
+        <img src="https://i.postimg.cc/mrDv142J/logo-png.png" alt="Logo Éternelle">
+    </header>
+
+    
+
+<body>
+
+  <nav class="menu-principal">
+            <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link current">inicio</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">vitaminas esenciales</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">grupo b</li> <li><a href="complejob.html">complejo b</a></li>
+                            <li><a href="b12.html">b12</a></li>
+                            
+                            <li class="submenu-category-title">otras vitaminas</li>
+                            <li><a href="vitaminaa.html">vitamina a</a></li>
+                            <li><a href="vitaminac.html">vitamina c</a></li>
+                            <li><a href="vitaminad3k2.html">vitamina d3 + k2</a></li>
+                            <li><a href="vitaminae.html">vitamina e</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">minerales y nutrientes</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">minerales</li>
+                            <li><a href="calcio.html">calcio</a></li>
+                            <li><a href="magnesio.html">magnesio</a></li>
+                            <li><a href="potasio.html">potasio</a></li>
+                            
+                            <li class="submenu-category-title">nutrientes clave</li>
+                            <li><a href="omega-3.html">omega-3</a></li>
+                            <li><a href="colageno.html">colágeno</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">salud avanzada</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">energía y antiedad</li>
+                            <li><a href="nad-resveratrol.html">nad+ / resveratrol</a></li>
+                            <li><a href="glutathione.html">glutathione</a></li>
+                            <li><a href="acidohialuronico.html">ácido hialurónico</a></li>
+
+                            <li class="submenu-category-title">metabolismo y estrés</li>
+                            <li><a href="ksm66ashwagandha.html">ksm-66 ashwagandha</a></li>
+                            <li><a href="berberina.html">berberina</a></li>
+
+                            <li class="submenu-category-title">digestión e inmunidad</li>
+                            <li><a href="candidasupport.html">candida support</a></li>
+                        </ul >
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">multivitaminicos</a>
+                        <ul class="submenu">
+                            <li><a href="multivitaminicoshombre.html">para hombres</a></li>
+                            <li><a href="multivitaminicosmujer.html">para mujeres</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="contacto.html" class="nav-link">contacto</a></li>
+                </ul>
+  </nav>
+
+        <main>
+            
+
+        <section class="products-section" id="mas-vendido">
+            <div class="bloque-encabezado">
+                <h2 class="section-title">descubre por qué estos suplementos son los más elegidos.</h2>
+                <p class="section-description"></p>
+            </div>
+
+            <div class="products">
+                    
+                   
+                    <!--PRODUCTO 1-->  
+                <div class="container" tabindex="0" style="background-image: url('https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/sre/sre01183/y/109.jpg');">
+                    <div class="overlay">
+                        <div class="items"></div>
+                        <div class="items head">
+                            <p class="marca">SPORTS RESEARCH</p>
+                            <p class="descripcion">Alaskan Omega-3</p>
+                            <p class="descripcion">Fish Oil Triple Strength</p>
+                            <p class="descripcion">(90 softgels)</p>
+                            <hr>
+                        </div>
+                        <div class="items price">
+                            <p class="new">S/. 210.90</p>
+                        </div>
+                        <div class="items cart">
+                            <label for="toggle2" class="ver-producto">VER MÁS</label>
+                            <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20Alaskan%20Omega-3%20Fish%20Oil%20Triple%20Strength%20(90%20softgels)%0A-%20SPORTS%20RESEARCH%0A-%20S/.%20210.90" target="_blank" rel="noopener noreferrer">
+                                PEDIR AHORA</a>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" id="toggle2" class="toggle-detalle" hidden>
+
+                    <div class="panel-lateral">
+                        <label for="toggle2" class="cerrar-panel">✕</label>
+                        
+                        <h3><strong>Tamaño de la porción:</strong></h3>
+                        <p>1 softgel</p>
+                        <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                        <p>90</p>
+
+                        <h3><strong>Uso Sugerido:</strong></h3>
+                        <p>Los adultos deben tomar 1 cápsula blanda por día con comida o según las recomendaciones de un profesional de la salud calificado.</p>
+
+                        <h3><strong>Ingredientes:</strong></h3>
+                            <ul class="lista-ingredientes">
+                                <li><strong>- Calorías:</strong> 15</li>
+                                <li><strong>- Grasas totales:</strong> 1.5g</li>
+                                <li><strong>- Concentrado de aceite de pescado:</strong> 1250mg</li>
+                                <li><strong>- Ácidos grasos omega-3 totales en forma de triglicéridos (TG):</strong> 1040mg</li>
+                                <li><strong>- Ácido eicosapentaenoico (EPA):</strong> 690mg</li>
+                                <li><strong>- Ácido docosahexaenoico (DHA):</strong> 260mg</li>
+                                <li><strong>- Otros ácidos grasos omega-3:</strong> 90mg</li>
+                            </ul>
+                    </div>  
+
+                </div>
+                    <!--PRODUCTO 2-->  
+                <div class="container" tabindex="0" style="background-image: url('https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00900/y/8.jpg');">     
+                    <div class="overlay">
+                        <div class="items head">
+                            <p class="marca">NOW</p>
+                            <p class="descripcion">E-1000</p>
+                            <p class="descripcion">with Mixed Tocopherols</p>
+                            <p class="descripcion">(50 softgels)</p>
+                            <hr>
+                        </div>
+                        <div class="items price">
+                            <p class="new">S/. 170.90</p>
+                        </div>
+                        <div class="items cart">
+                            <label for="toggle3" class="ver-producto">VER MÁS</label>
+                            <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20E-1000%20with%20Mixed%20Tocopherols%20(50%20softgels)%0A-%20NOW%0A-%20S/.%20170.90" target="_blank" rel="noopener noreferrer">
+                                PEDIR AHORA</a>
+                        </div>
+                    </div>  
+                    
+                    <input type="checkbox" id="toggle3" class="toggle-detalle" hidden>
+
+                    <div class="panel-lateral">
+                        <label for="toggle3" class="cerrar-panel">✕</label>
+                        
+                        <h3><strong>Tamaño de la porción:</strong></h3>
+                        <p>1 softgel</p>
+                        <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                        <p>50</p>
+
+                        <h3><strong>Uso Sugerido:</strong></h3>
+                        <p>Tome 1 cápsula blanda por día con una comida.</p>
+
+                        <h3><strong>Ingredientes:</strong></h3>
+                            <ul class="lista-ingredientes">
+                                <li><strong>- Calorías:</strong> 10</li>
+                                <li><strong>- Grasas totales:</strong> 1g</li>
+                                <li><strong>- Vitamina E (en forma de D-alfa-tocoferol):</strong> 670mg</li>
+                            </ul>
+                    </div>  
+
+                </div>
+                     <!--PRODUCTO -3--> 
+                <div class="container" tabindex="0" style="background-image: url('https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/goi/goi35740/y/56.jpg');">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p class="marca">GOLI</p>
+                    <p class="descripcion">Ashwagandha</p>
+                    <p class="descripcion">Gummies</p>
+                    <p class="descripcion">(60 gomitas)</p>
+                    <hr>
+                </div>
+                <div class="items price">
+                    <p class="new">S/. 125.90</p>
+                </div>
+                <div class="items cart">
+                    <label for="toggle4" class="ver-producto">VER MÁS</label>
+                    <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20Ashwagandha%20Gummies%20(60%20gomitas)%0A-%20GOLI%0A-%20S/.%20125.90" target="_blank" rel="noopener noreferrer">
+                        PEDIR AHORA</a>
+                </div>  
+            </div>
+                
+            <input type="checkbox" id="toggle4" class="toggle-detalle" hidden>
+
+            <div class="panel-lateral">
+                <label for="toggle4" class="cerrar-panel">✕</label>
+                
+                <h3><strong>Tamaño de la porción:</strong></h3>
+                <p>2 gomitas</p>
+                <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                <p>30</p>
+
+                <h3><strong>Uso Sugerido:</strong></h3>
+                <p>Consuma 2 gomitas dos veces por día. Mastique bien.</p>
+
+                <h3><strong>Ingredientes:</strong></h3>
+                    <ul class="lista-ingredientes">
+                        <li><strong>- Calorías:</strong> 25</li>
+                        <li><strong>- Sodio:</strong> 20mg</li>
+                        <li><strong>- Carbohidratos totales:</strong> 6g</li>
+                        <li><strong>- Vitamina D2 (ergocalciferol):</strong> 25mcg</li>
+                        <li><strong>- Extracto de raíz de ginseng indio KSM-66®:</strong> 300mg</li>
+                    </ul>
+            </div>  
+
+                </div>
+
+                 <!--PRODUCTO 4-->  
+                <div class="container" tabindex="0" style="background-image: url('https://i.postimg.cc/NGkXJfK5/Diseno-sin-titulo-2.png');">
+                    <div class="overlay">
+                        <div class="items"></div>
+                        <div class="items head">
+                            <p class="marca">AUMETO</p>
+                            <p class="descripcion">NAD+</p>
+                            <p class="descripcion">Resveratrol</p>
+                            <p class="descripcion">(90 cápsulas)</p>
+                            <hr>
+                        </div>
+                        <div class="items price">
+                            <p class="new">S/. 168.90</p>
+                        </div>
+                        <div class="items cart">
+                            <label for="toggle1" class="ver-producto">VER MÁS</label>
+                            <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20NAD+%20Resveratrol%20(90%20cápsulas)%0A-%20AUMETO%0A-%20S/.%20168.90" target="_blank" rel="noopener noreferrer">
+                                PEDIR AHORA</a>
+                        </div>  
+                    </div>
+                        
+                        <input type="checkbox" id="toggle1" class="toggle-detalle" hidden>
+
+                    <div class="panel-lateral">
+                        <label for="toggle1" class="cerrar-panel">✕</label>
+                        
+                        <h3><strong>Tamaño de la porción:</strong></h3>
+                        <p>1 cápsula</p>
+                        <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                        <p>90</p>
+
+                        <h3><strong>Uso Sugerido:</strong></h3>
+                        <p>Tome 1 cápsula al día como suplemento dietético, o como lo indique su medico.</p>
+
+                        <h3><strong>Ingredientes:</strong></h3>
+                            <ul class="lista-ingredientes">
+                                <li><strong>- NAD:</strong> 350mg</li>
+                                <li><strong>- Trans-resveratrol:</strong> 50mg</li>
+                                <li><strong>- Quercetina:</strong> 30mg</li>
+                                <li><strong>- Rhodiola rosea:</strong> 20mg</li>
+                                <li><strong>- Astragalus:</strong> 20mg</li>
+                                <li><strong>- Red Panax Ginseng:</strong> 10mg</li>
+                                <li><strong>- Green tea powder:</strong> 10mg</li>
+                                <li><strong>- Black pepper:</strong> 10mg</li>
+                            </ul>
+                    </div>           
+                </div>
+                    
+            
+            </div>
+
+        </section>
+        
+        <hr class="separador">
+
+        <section class="products-section" id="recomendados">
+            <div class="bloque-encabezado">
+                <h2 class="section-title">recomendados de éternelle.</h2>
+                <p class="section-description">nuestra selección especial: fórmulas innovadoras y alta biodisponibilidad.</p>
+            </div>
+            
+            <div class="products">
+
+
+                  
+                <div class="container" tabindex="0" style="background-image: url('https://i.postimg.cc/J04fWzML/nad2.png');">
+                    <div class="overlay">
+                        <div class="items"></div>
+                        <div class="items head">
+                            <p class="marca">FORCE FACTOR</p>
+                            <p class="descripcion">NAD+ Longevity</p>
+                            <p class="descripcion">Nutrient Complex</p>
+                            <p class="descripcion">(60 cápsulas)</p>
+                            <hr>
+                        </div>
+                        <div class="items price">
+                            <p class="new">S/. 239.90</p>
+                        </div>
+                        <div class="items cart">
+                            <label for="toggle5" class="ver-producto">VER MÁS</label>
+                            <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20NAD+%20Longevity%20Nutrient%20Complex%20(60%20cápsulas)%0A-%20FORCE%20FACTOR%0A-%20S/.%20239.90" target="_blank" rel="noopener noreferrer">
+                                PEDIR AHORA</a>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" id="toggle5" class="toggle-detalle" hidden>
+
+                    <div class="panel-lateral">
+                        <label for="toggle5" class="cerrar-panel">✕</label>
+                        
+                        <h3><strong>Tamaño de la porción:</strong></h3>
+                        <p>2 cápsulas</p>
+                        <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                        <p>30</p>
+
+                        <h3><strong>Uso Sugerido:</strong></h3>
+                        <p>Tome 2 cápsulas una vez por día.</p>
+
+                        <h3><strong>Ingredientes:</strong></h3>
+                            <ul class="lista-ingredientes">
+                                <li><strong>- Niacina (en forma de niacinamida):</strong> 40mg</li>
+                                <li><strong>- NAD+ (dinucleótido de nicotinamida y adenina):</strong> 200mg</li>
+                                <li><strong>- Trans-resveratrol (proveniente del extracto de Fallopia japonica [Polygonum cuspidatum] [raíz]):</strong> 100mg</li>
+                                <li><strong>- Luteolina (proveniente del extracto de Sophora japonica [capullo]):</strong> 100mg</li>
+                                <li><strong>- Triclorhidrato de espermidina (3HCl):</strong> 10mg</li>
+                                <li><strong>- Extracto de brócoli (Brassica oleracea) (semilla) (estandarizado para que contenga sulforafano):</strong> 10mg</li>
+                                <li><strong>- Astaxantina:</strong> 2mg</li>
+                            </ul>
+                    </div> 
+                </div>
+                           
+                <div class="container" tabindex="0" style="background-image: url('https://i.postimg.cc/tJL2vSM5/KSM2.png');">
+                    <div class="overlay">
+                        <div class="items"></div>
+                        <div class="items head">
+                            <p class="marca">BRONSON</p>
+                            <p class="descripcion">Ashwagandha</p>
+                            <p class="descripcion">Extra Strength</p>
+                            <p class="descripcion">(120 cápsulas)</p>
+                            <hr>
+                        </div>
+                        <div class="items price">
+                            <p class="new">S/. 135.90</p>
+                        </div>
+                        <div class="items cart">
+                            <label for="toggle7" class="ver-producto">VER MÁS</label>
+                            <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20Ashwagandha%20Extra%20Strength%20(120%20cápsulas)%0A-%20BRONSON%0A-%20S/.%20135.90" target="_blank" rel="noopener noreferrer">
+                                PEDIR AHORA</a>
+                        </div>  
+                    </div>
+                        
+                        <input type="checkbox" id="toggle7" class="toggle-detalle" hidden>
+
+                    <div class="panel-lateral">
+                        <label for="toggle7" class="cerrar-panel">✕</label>
+                        
+                        <h3><strong>Tamaño de la porción:</strong></h3>
+                        <p>2 cápsulas</p>
+                        <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                        <p>60</p>
+
+                        <h3><strong>Uso Sugerido:</strong></h3>
+                        <p>Como suplemento dietético para adultos, tomar 2 cápsulas al día, preferiblemente con una comida o según las indicaciones de un profesional de la salud.</p>
+
+                        <h3><strong>Ingredientes:</strong></h3>
+                            <ul class="lista-ingredientes">
+                                <li><strong>- Polvo de hierba Ashwagandha (Withania somnifera):</strong> 150mg</li>
+                                <li><strong>- Extracto de pimienta negra BioPerine (piper nigrum):</strong> 5mg</li>                   
+                            </ul>
+                    </div>  
+                    
+                </div>
+
+                <div class="container" tabindex="0" style="background-image: url('https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/lex/lex24196/y/24.jpg');">
+            <div class="overlay">
+                
+                
+                <div class="items head">
+                    <p class="marca">LIFE EXTENSION</p>
+                    <p class="descripcion">B12 Elite</p>
+                    <p class="descripcion">(60 pastillas)</p>
+                    <hr>
+                </div>
+                <div class="items price">
+                    <p class="new">S/. 135.90</p>
+                </div>
+                <div class="items cart">
+                    <label for="toggle8" class="ver-producto">VER MÁS</label>
+                    <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20B12%20Elite%20(60%20pastillas)%0A-%20LIFE%20EXTENSION%0A-%20S/.%20135.90" target="_blank" rel="noopener noreferrer">
+                        PEDIR AHORA</a>
+                </div>
+            </div>  
+            
+            <input type="checkbox" id="toggle8" class="toggle-detalle" hidden>
+
+            <div class="panel-lateral">
+                <label for="toggle8" class="cerrar-panel">✕</label>
+                
+                <h3><strong>Tamaño de la porción:</strong></h3>
+                <p>1 pastilla</p>
+                <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                <p>60</p>
+
+                <h3><strong>Uso Sugerido:</strong></h3>
+                <p>Lea la etiqueta completa y siga las instrucciones con cuidado.
+Disuelva en la boca o mastique una (1) pastilla por día o según las recomendaciones de un profesional de la salud.</p>
+
+                <h3><strong>Ingredientes:</strong></h3>
+                    <ul class="lista-ingredientes">
+                        <li><strong>- Vitamina B12 (como adenosilcobalamina, metilcobalamina):</strong> 1000 mcg</li>                      
+                    </ul>
+            </div>  
+
+                </div>
+               
+                <div class="container" tabindex="0" style="background-image: url('https://i.postimg.cc/bv4CvKsb/col3.png');">
+                    <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p class="marca">SPORTS RESEARCH</p>
+                    <p class="descripcion">Multi Collagen</p>
+                    <p class="descripcion">(Type I, II, III, V, X)</p>
+                    <p class="descripcion">(90 cápsulas)</p>
+                    <hr>
+                </div>
+                <div class="items price">
+                    <p class="new">S/. 189.90</p>
+                </div>
+                <div class="items cart">
+                    <label for="toggle6" class="ver-producto">VER MÁS</label>
+                    <a class="pedir-ahora btn" href="https://wa.me/51994306426?text=Hola,%20quiero%20comprar:%0A-%20Multi%20Collagen%20Type%20I,%20II,%20III,%20V,%20X%20(90%20cápsulas)%0A-%20SPORTS%20RESEARCH%0A-%20S/.%20189.90" target="_blank" rel="noopener noreferrer">
+                        PEDIR AHORA</a>
+                </div>  
+                </div>
+                
+                <input type="checkbox" id="toggle6" class="toggle-detalle" hidden>
+
+            <div class="panel-lateral">
+                <label for="toggle6" class="cerrar-panel">✕</label>
+                
+                <h3><strong>Tamaño de la porción:</strong></h3>
+                <p>3 cápsulas</p>
+                <h3><strong>Cantidad de porciones por envase:</strong></h3>
+                <p>30</p>
+
+                <h3><strong>Uso Sugerido:</strong></h3>
+                <p>Los adultos deben tomar 3 cápsulas por día con o sin comida, o según las recomendaciones de un profesional de la salud calificado.</p>
+
+                <h3><strong>Ingredientes:</strong></h3>
+                    <ul class="lista-ingredientes">
+                        <li><strong>- Vitamina C (en forma de ascorbato de calcio):</strong> 90mg</li>
+                        <li><strong>- Sodio:</strong> 10mg</li>
+                        <li><strong>- Complejo con múltiples tipos de colágeno: Péptidos de colágeno hidrolizado bovino, colágeno de cáscara de huevo, péptidos de colágeno de pescado hidrolizado, concentrado de caldo de huesos de pollo:</strong> 1600mg</li>
+                        <li><strong>- Ácido hialurónico (en forma de hialuronato de sodio):</strong> 60mg</li>
+                    </ul>
+            </div>  
+
+                </div>
+            
+            </div>
+
+        </section>
+          
+        </main>
+
+  <footer class="footer">
+    <p>© 2025 éternelle. Todos los derechos reservados. Lima, Perú.</p>
+  </footer>
+
+  <script>
+document.addEventListener("click", function (e) {
+  const clickedContainer = e.target.closest(".container");
+
+  // Oculta todos los overlays
+  document.querySelectorAll(".overlay").forEach((o) => o.classList.remove("show"));
+
+  // Si hizo clic dentro de una card, muestra su overlay
+  if (clickedContainer) {
+    const overlay = clickedContainer.querySelector(".overlay");
+    if (overlay) overlay.classList.add("show");
+  }
+});
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            // Impedimos que el enlace con href="#" salte al principio de la página
+            toggle.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                
+                const parentDropdown = toggle.closest('.dropdown');
+                
+                // 1. CERRAR TODOS LOS DEMÁS SUBMENÚS (Soluciona Apertura Cruzada)
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                
+                // 2. HACER TOGGLE (Abrir/Cerrar) en el submenú actual
+                // Soluciona el problema de No Cierra al Tocar de Nuevo
+                parentDropdown.classList.toggle('active');
+            });
+        });
+        
+        // 3. CERRAR AL TOCAR FUERA (Mejora de UX en Móvil)
+        document.addEventListener('click', (event) => {
+            // Si el toque no ocurrió dentro del menú de navegación
+            if (!event.target.closest('.menu-principal')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+        
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - éternelle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css"> 
+    <link rel="stylesheet" href="css/contacto.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+    <div class="barra-envio">
+        <div class="texto-envio">
+            ✈️ Envío gratuito a partir de S/350 a todo Lima y Provincias. &nbsp;&nbsp;&nbsp;
+            
+        </div>
+    </div>
+
+
+<body>
+
+             <header>
+                <img src="https://i.postimg.cc/mrDv142J/logo-png.png" alt="Logo Éternelle">
+            </header>
+
+            <nav class="menu-principal">
+            <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">inicio</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">vitaminas esenciales</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">grupo b</li> <li><a href="complejob.html">complejo b</a></li>
+                            <li><a href="b12.html">b12</a></li>
+                            
+                            <li class="submenu-category-title">otras vitaminas</li>
+                            <li><a href="vitaminaa.html">vitamina a</a></li>
+                            <li><a href="vitaminac.html">vitamina c</a></li>
+                            <li><a href="vitaminad3k2.html">vitamina d3 + k2</a></li>
+                            <li><a href="vitaminae.html">vitamina e</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">minerales y nutrientes</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">minerales</li>
+                            <li><a href="calcio.html">calcio</a></li>
+                            <li><a href="magnesio.html">magnesio</a></li>
+                            <li><a href="potasio.html">potasio</a></li>
+                            
+                            <li class="submenu-category-title">nutrientes clave</li>
+                            <li><a href="omega-3.html">omega-3</a></li>
+                            <li><a href="colageno.html">colágeno</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">salud avanzada</a>
+                        <ul class="submenu">
+                            <li class="submenu-category-title">energía y antiedad</li>
+                            <li><a href="nad-resveratrol.html">nad+ / resveratrol</a></li>
+                            <li><a href="glutathione.html">glutathione</a></li>
+                            <li><a href="acidohialuronico.html">ácido hialurónico</a></li>
+
+                            <li class="submenu-category-title">metabolismo y estrés</li>
+                            <li><a href="ksm66ashwagandha.html">ksm-66 ashwagandha</a></li>
+                            <li><a href="berberina.html">berberina</a></li>
+
+                            <li class="submenu-category-title ">digestión e inmunidad</li>
+                            <li><a href="candidasupport.html">candida support</a></li>
+                        </ul >
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">multivitaminicos</a>
+                        <ul class="submenu">
+                            <li><a href="multivitaminicoshombre.html">para hombres</a></li>
+                            <li><a href="multivitaminicosmujer.html">para mujeres</a></li>
+                        </ul>
+        </li>
+                    
+                    <li><a href="contacto.html" class="nav-link current">contacto</a></li>
+                </ul>
+            </nav>
+
+    <main class="contacto-main">
+        <section class="contacto-container">
+
+                <h1 class="contacto-title">¡Hablemos!</h1>
+                <p class="contacto-subtitle">Estamos disponibles para pedidos y consultas.</p>
+       
+
+            <div class="contacto-card">
+                
+                <a href="https://wa.me/51994306426?text=Hola,%20quisiera%20hacer%20una%20consulta%20sobre%20sus%20productos." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contacto-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> +51 994 306 426
+                </a>
+
+                <hr class="contacto-divider">
+                
+                <h2 class="redes-title">Síguenos en redes</h2>
+
+                <div class="redes-container">
+                    
+                    <a href="https://www.instagram.com/eternelleperu/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="red-btn instagram-btn">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+
+                    <a href="https://www.tiktok.com/@eternelleperu" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="red-btn tiktok-btn">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    
+                </div>
+            </div>
+
+            <p class="contacto-note">Tiempo de respuesta promedio: 5 min.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 éternelle. Todos los derechos reservados. Lima, Perú.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            // Impedimos que el enlace con href="#" salte al principio de la página
+            toggle.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                
+                const parentDropdown = toggle.closest('.dropdown');
+                
+                // 1. CERRAR TODOS LOS DEMÁS SUBMENÚS (Soluciona Apertura Cruzada)
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                
+                // 2. HACER TOGGLE (Abrir/Cerrar) en el submenú actual
+                // Soluciona el problema de No Cierra al Tocar de Nuevo
+                parentDropdown.classList.toggle('active');
+            });
+        });
+        
+        // 3. CERRAR AL TOCAR FUERA (Mejora de UX en Móvil)
+        document.addEventListener('click', (event) => {
+            // Si el toque no ocurrió dentro del menú de navegación
+            if (!event.target.closest('.menu-principal')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+        
+    });
+</script>
+
+    
+    </body>
+</html>
+
+
+
+
+
